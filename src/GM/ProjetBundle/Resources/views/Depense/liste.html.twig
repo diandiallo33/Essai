@@ -1,8 +1,11 @@
 {# empty Twig template #}
-<p>Voici la liste de tous les frais!</p>
+<h1>Voici la liste de tous les frais!</h1>
     <section>
         <table border="2" width="40%">
-            <tr><th>ID</th><th>Désignation</th><th>Montant</th><th>Pièce</th><th>Date</th><th>info Complémentaire</th><th>Validite</th></tr>
+            <thead>
+                <tr><th>ID</th><th>Désignation</th><th>Montant</th><th>Pièce</th><th>Date</th><th>info Complémentaire</th><th>Actions</th></tr>
+            </thead>
+            
         {% for f in Frais %}
             <tr>
                 <td> {{f.id}}</td>
@@ -11,6 +14,12 @@
                 <td> {{f.piece}}</td>
                 <td> {{f.date | date('d-m-y')}}</td>
                 <td> {{f.infoCom}}</td>
+                <td>
+                    <ul>
+                        <button><a href="{{path('gm_projet_modification',{ id:f.id})}}"> Modifier </a></button>
+                        <button><a href="{{path('gm_projet_suppression',{ id:f.id})}}"> Supprimer </a></button>
+                    </ul>
+                </td>
             </tr>
         {% endfor %}
         </table> 

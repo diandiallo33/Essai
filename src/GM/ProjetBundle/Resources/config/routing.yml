@@ -2,13 +2,30 @@ gm_projet_homepage:
     path:     /
     defaults: { _controller: GMProjetBundle:Default:index }
         
-        
+
+
 gm_projet_ajout:
     path:    /AjoutFrais
     defaults:
         _controller: GMProjetBundle:Depense:ajoutfrais
 
+#gm_projet_affiche:
+#    path:    /AfficherFrais/{id}
+#    defaults:
+#        _controller: GMProjetBundle:Depense:affichefrais
+        
 gm_projet_liste:
     path:    /ListeFrais
     defaults:
         _controller: GMProjetBundle:Depense:listefrais
+        
+gm_projet_modification:
+    path:    /ModificationFrais/{id}
+    defaults:
+        _controller: GMProjetBundle:Depense:modificationfrais
+        
+gm_projet_suppression:
+    path:    /SuppressionFrais/{id}
+    defaults:
+        _controller: GMProjetBundle:Depense:suppressionfrais
+ 

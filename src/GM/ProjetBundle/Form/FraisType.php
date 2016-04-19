@@ -10,8 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-
-use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 class FraisType extends AbstractType
 {
@@ -24,7 +23,7 @@ class FraisType extends AbstractType
         $builder
             ->add('designation')
             ->add('montant', NumberType::class)
-            ->add('piece')
+            ->add('piece', FileType::class, array('label' => 'Pièce Brochure (PDF file)', 'data_class' => null))
             ->add('date', DateTimeType::class)
 //            ->add('mission')
 ////      ->add('mission', "entity", array("class"=>"GM\ProjetBundle\Entity\Mission", "property"=>"mission_id"))
